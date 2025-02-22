@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geist Mono', monospace;
+}
+
+.page-wrapper{
+    max-width: 920px;
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    border-left: 1px solid #F4F4F4;
+    border-right: 1px solid #F4F4F4;
+    min-height: 100vh;
+    height: auto;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wordmark, .logo{
+    max-height: 60px;
+}
+main{
+    padding-top: 2.5rem;
+}
+
+.waitlist-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.waitlist-form input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid #000;
+    background: white;
+}
+
+.waitlist-form button {
+    padding: 12px 24px;
+    font-size: 14px;
+    background: black;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.waitlist-form button:hover {
+    background: white;
+    color: black;
+}
+a{
+    color: black;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding: 2rem 1rem;
+        border: none;
+    }
+    
+    .waitlist-form {
+        flex-direction: column;
+    }
+    
+    .waitlist-form input,
+    .waitlist-form button {
+        width: 100%;
+    }
+}
