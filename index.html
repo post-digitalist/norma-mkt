@@ -30,25 +30,42 @@
         <main>
             <p>Norma is an AI-powered programmatic SEO workflow, developed by the fine folks at <a href="https://www.postdigitalist.xyz?ref=norma">Postdigitalist</a>. Norma enables marketers to turn proprietary data into SEO-optimized content at scale, no developer needed. Coming later this year.</p>
             
-            <form 
-                class="waitlist-form" 
-                action="https://xyz.us14.list-manage.com/subscribe/post?u=3c980d00ac8769f6ac35ed2f1&amp;id=04f1d4ec31" 
-                method="POST" 
-                name="mc-embedded-subscribe-form" 
-                target="_blank"
-            >
-                <input 
-                    type="email" 
-                    name="EMAIL" 
-                    placeholder="you@acme.com" 
-                    required
-                />
-                <!-- Mailchimp bot protection - must keep this -->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                    <input type="text" name="b_3c980d00ac8769f6ac35ed2f1_04f1d4ec31" tabindex="-1" value="">
+            <div id="form-container">
+                <form 
+                    class="waitlist-form" 
+                    action="https://xyz.us14.list-manage.com/subscribe/post?u=3c980d00ac8769f6ac35ed2f1&amp;id=04f1d4ec31" 
+                    method="POST" 
+                    name="mc-embedded-subscribe-form" 
+                    target="_blank"
+                    onsubmit="showThankYouMessage(event)"
+                >
+                    <input 
+                        type="email" 
+                        name="EMAIL" 
+                        placeholder="you@acme.com" 
+                        required
+                    />
+                    <!-- Mailchimp bot protection - must keep this -->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_3c980d00ac8769f6ac35ed2f1_04f1d4ec31" tabindex="-1" value="">
+                    </div>
+                    <button type="submit" name="subscribe">Join the waitlist</button>
+                </form>
+                <div id="thank-you-message" style="display: none;">
+                    Thanks for joining the waitlist. We'll keep you posted!
                 </div>
-                <button type="submit" name="subscribe">Join the waitlist</button>
-            </form>
+            </div>
+
+            <script>
+                function showThankYouMessage(event) {
+                    event.preventDefault();
+                    document.querySelector('.waitlist-form').style.display = 'none';
+                    document.querySelector('#thank-you-message').style.display = 'block';
+                    
+                    // Submit the form data
+                    event.target.submit();
+                }
+            </script>
         </main>
     </div>
 </body>

@@ -61,7 +61,12 @@ a{
     color: black;
     opacity: 0.8;
 }
-
+#thank-you-message{
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #F4F4F4;
+    color: green;
+}
 @media (max-width: 768px) {
     .page-wrapper {
         padding: 2rem 1rem;
